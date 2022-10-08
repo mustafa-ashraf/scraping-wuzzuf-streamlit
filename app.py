@@ -259,6 +259,20 @@ def outer_scrap_function(job_name):
         df["full_part"] = full_part
         return df
 
+#/**************************************************************************************/
+def cleaning(data):
+        length = data["Experince"].count()
+        for i in range(0,length):
+            data["Experince"][i]= data["Experince"][i].strip()
+            data["country"][i]= data["country"][i].strip()
+            data["city"][i]= data["city"][i].strip()
+            if(len(data["full_part"][i])<10):
+                continue
+            else:
+                    data["full_part"][i]= data["full_part"][i].replace("Time","Time , ")
+        return data
+        
+#/*************************************************************************************/
 
 import streamlit as st
 #st.image("Mostafa.jpg",width=200)
@@ -268,29 +282,37 @@ st.markdown(header, unsafe_allow_html=True)
 
 my_form=st.form(key='form-1')
 title=my_form.text_input('Enter Job Title:')
-way=my_form.radio('select a Way to scraping',('Fast','Slow'))
+way=my_form.radio('Way of collecting the data',('Fast : It collect some of job features not all','Slow : It collect all of job features'))
 submitted=my_form.form_submit_button('Scrap Data to csv file')
 
 
 
 try:
-     if(title==""):
+    if(title==""):
         if submitted:
            st.write("please enter the Job Title")
-     else:
+    else:
         if submitted:
-            if(way=="Fast"):
+            if(way=="Fast : It collect some of job features not all"):
                 data = outer_scrap_function(title)
+                data = cleaning(data)
                 file_name = title + ".csv"
                 data.to_csv(file_name)
-            elif(way=="Slow"):
+            elif(way=="Slow : It collect all of job features"):
                 data = all_scrap_function(title)
+                data = cleaning(data)
                 file_name = title + ".csv"
-                data.to_csv(file_name)
-            st.write("Csv successfully downloaded")    
-except ValueError:
-     print("Please wait 5 minutes and try again because too many requests!!! ")
-
+                data.to_csv(file_name)   
+            st.write("CSV successfully created")
+            st.write(data)
+            import os
+            dir_path = os.path.dirname(os.path.realpath(__file__)) +"\\"+file_name
+            st.write("CSV file saved int this path :  "+dir_path)
+            #data = data[data["country"]=="Egypt"]
+                
+except:
+     st.error("Please wait 2 minutes and try again because too many requests!!! ")
+     st.stop()
 
 
 
