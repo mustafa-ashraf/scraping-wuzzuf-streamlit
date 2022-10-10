@@ -327,11 +327,11 @@ submitted=my_form.form_submit_button('Scrap Data to csv file')
 
 
 
-#try:
-if(title==""):
+try:
+    if(title==""):
         if submitted:
            st.write("please enter the Job Title")
-else:
+    else:
         if submitted:
             if(way=="Fast : It collect some of job features not all"):
                 data = outer_scrap_function(title)
@@ -361,9 +361,9 @@ else:
             x = data["Company_name"].value_counts()[1:6]
             st.line_chart(x)
             
-#except:
-#     st.error("Please wait 2 minutes and try again because too many requests!!! ")
-#     st.stop()
+except:
+     st.error("Please wait 2 minutes and try again because too many requests!!! ")
+     st.stop()
 
 
 
