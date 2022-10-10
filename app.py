@@ -348,7 +348,7 @@ try:
             import os
             dir_path = os.path.dirname(os.path.realpath(__file__)) +"\\"+file_name
             st.write("CSV file saved into this path :  "+dir_path)
-            #data = data[data["country"]=="Egypt"]
+            data = data[data["country"]=="Egypt"]
             header = '<p style="font-family:Courier; color:Blue; font-size: 45px;font-weight:bolder">Some statistics In Egypt</p>'
             st.markdown(header, unsafe_allow_html=True)
             st.write(draw_map(data))
