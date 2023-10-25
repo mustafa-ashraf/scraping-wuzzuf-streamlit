@@ -1,34 +1,59 @@
-# Web Scraping 
+# Wuzzuf Job Data Scraper
 
-<img src="https://www.kivodaily.com/wp-content/uploads/2022/11/1_1QcqrOoDE1rKa0NTp1iEtw.png">
+![Wuzzuf Logo](https://www.pharmiweb.jobs/getasset/3a360c2b-7a7c-4267-b11e-cd772f65f5d8/))
 
-## In This Project 
+## Overview
+Wuzzuf Job Data Scraper is a powerful web scraping tool designed to extract job data from the renowned job portal, [Wuzzuf](https://wuzzuf.net). It offers a user-friendly interface for collecting job information, performing data analysis, and visualizing statistics related to job listings in Egypt. This tool provides two distinct scraping modes, "Fast" and "Slow," catering to a wide range of data collection needs.
 
-1- you can scrap the data of jobs from wuzzuf.com
- by only writing the job title you want.
+## Features
+### Job Data Scraping
+The Wuzzuf Job Data Scraper enables users to collect the following job data:
 
-2- perform some preprocessing and cleaning the data.
+- **Job Titles**: Obtain a comprehensive list of job titles available on Wuzzuf.
 
-3- saving the returned data to csv file on your device.
+- **Job Requirements**: Collect detailed information about job requirements, including skills, qualifications, and responsibilities.
 
-4- their is 2 types of scaring in project fast and slow.
+- **Experience Levels**: Get insights into the required experience levels for each job.
 
-5- fast get less information about the job, it take about 2 minutes.
+- **Company Details**: Gather data about the hiring companies, including their names, locations, and additional information.
 
-6- slow get all the details about the job, it take from 3 to 6 minutes.
+- **Job Location**: Find out where each job is located, down to the city level.
 
-7- you can visualize some statistics about your job in Egypt.
+### Two Scraping Modes
+This tool offers two distinct scraping modes to cater to your specific data collection needs:
 
-8- you can ranking the cities that has high number of this job.
+- **Fast Mode**: This mode retrieves essential job features, providing a quick overview of job listings.
 
-9- Ranking of companies according to the company's superiority in this job.
+- **Slow Mode**: For comprehensive data collection, the slow mode captures all available job features, enabling in-depth analysis.
 
-### it was a challenge to me and it directed me to learn some tools and gain more knowledge
+### Data Cleaning
+The tool automatically performs basic data cleaning, ensuring the scraped data is consistent and easy to read.
 
-# technologies used:
-- python 
-- beautiful soup for scraping
-- selenium for scraping
-- streamlit for Gui
+### CSV Export
+The collected job data can be exported to a CSV file, facilitating further analysis and reporting.
 
-# Thnak You
+### Data Visualization
+Wuzzuf Job Data Scraper offers visualizations to help you better understand job statistics in Egypt for your specified job title:
+
+- **Map of Job Locations**: Visualize the locations of job listings on a map.
+
+- **Top Cities**: Identify the top cities with the most job listings for the specified job title.
+
+- **Top Companies**: Discover the leading companies offering job opportunities in Egypt.
+
+## Usage
+1. Enter your desired job title in the input field on the tool's user interface.
+
+2. Choose the scraping mode, either "Fast" or "Slow," based on your specific data collection requirements.
+
+3. Click the "Scrap Data to CSV file" button to initiate the scraping process.
+
+4. Once the scraping process is complete, the tool will display the scraped job data on the user interface. Simultaneously, a CSV file containing the job data will be saved. The CSV file's name is derived from the job title you provided.
+
+5. The tool provides a range of visualizations to help you gain insights into job statistics in Egypt related to your selected job title.
+
+## Limitations
+- **Rate Limiting**: It is important to be aware that the tool may experience delays or rate limiting if you send a high volume of requests to the Wuzzuf website in a short time.
+
+- **Region-Specific**: The tool is optimized for job scraping in Egypt and may not provide the expected results for job listings in other regions.
+
